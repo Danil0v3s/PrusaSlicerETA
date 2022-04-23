@@ -1,5 +1,4 @@
 # coding=utf-8
-# coding=utf-8
 from __future__ import absolute_import, unicode_literals
 import octoprint.plugin
 import re
@@ -64,6 +63,7 @@ class pETAPrintTimeEstimator(PrintTimeEstimator):
         super(pETAPrintTimeEstimator, self).__init__(job_type)
 
     def estimate(self, progress, printTime, cleanedPrintTime, statisticalTotalPrintTime, statisticalTotalPrintTimeType):
+        self._logger.info("### " + eta + " >>> " + eta - (int(time.time()) - ts))
         return eta - (int(time.time()) - ts), "estimate"
 
 
