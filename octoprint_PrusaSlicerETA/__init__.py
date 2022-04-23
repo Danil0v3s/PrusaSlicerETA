@@ -59,11 +59,12 @@ class PrusasliceretaPlugin(octoprint.plugin.OctoPrintPlugin):
         }
 
 class pETAPrintTimeEstimator(PrintTimeEstimator):
+    
     def __init__(self, job_type):
         super(pETAPrintTimeEstimator, self).__init__(job_type)
 
     def estimate(self, progress, printTime, cleanedPrintTime, statisticalTotalPrintTime, statisticalTotalPrintTimeType):
-        self._logger.info("### " + eta + " >>> " + eta - (int(time.time()) - ts))
+        print("### " + eta + " >>> " + eta - (int(time.time()) - ts))
         return eta - (int(time.time()) - ts), "estimate"
 
 
