@@ -64,7 +64,7 @@ class pETAPrintTimeEstimator(PrintTimeEstimator):
         super(pETAPrintTimeEstimator, self).__init__(job_type)
 
     def estimate(self, progress, printTime, cleanedPrintTime, statisticalTotalPrintTime, statisticalTotalPrintTimeType):
-        print("### " + eta + " >>> " + eta - (int(time.time()) - ts))
+        print("### " + str(eta) + " >>> " + str(eta - (int(time.time()) - ts)))
         return eta - (int(time.time()) - ts), "estimate"
 
 
