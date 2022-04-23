@@ -29,6 +29,7 @@ def pETAeveryLine(comm, line, *args, **kwargs):
     global eta, r, ts, oldZ
     m = r.search(line)
     if m:
+        print("### " + m.group(0))
         eta = int(convert_to_seconds(m.group(0)))
         ts = int(time.time())
         # comm._sendCommand("M114")
